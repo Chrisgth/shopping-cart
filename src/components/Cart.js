@@ -1,7 +1,7 @@
 const Cart = () => {
 	return ( 
 		<div className="cart">
-			
+			<p>cart</p>
 		</div>
 	 );
 }

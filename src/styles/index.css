@@ -1,3 +1,5 @@
+/* Palette url https://coolors.co/acbdba-cddddd-a599b5-2e2f2f-051014 */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +12,32 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  padding: 1rem;
+  background-color: #2E2F2F;
+  color: #ACBDBA;
+}
+
+.links {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 1rem;
+}
+
+.links > a {
+  color: #ACBDBA;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+#cartico {
+  filter: invert(85%) sepia(22%) saturate(112%) hue-rotate(119deg) brightness(84%) contrast(93%);
 }
