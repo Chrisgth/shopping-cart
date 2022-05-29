@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import ShopItems from "./ShopItems";
+import ShopPag from "./ShopPag";
 
 const Shop = () => {
 
@@ -6,7 +8,7 @@ const Shop = () => {
 	const [loading, setLoading] = useState(false)
 	const [error, setError] = useState(false)
 	const [currentPage, setCurrentPage] = useState(1)
-	const [postsPerPage, setPostsPerPage] = useState(4)
+	const [postsPerPage] = useState(4)
 
 	useEffect(() => {
 		const fetchCars = async () => {
@@ -31,18 +33,19 @@ const Shop = () => {
 		fetchCars()
 	}, [])
 
+	const indexOfLastPost = currentPage * postsPerPage;
+	const indexOfFirstPost = indexOfLastPost - postsPerPage
+	const currentPosts = carsArr.slice(indexOfFirstPost, indexOfLastPost)
+
+	const paginate = (pageNum) => {
+		setCurrentPage(pageNum)
+	}
+
 
 	return ( 
 		<div className="shop">
-			{loading && <div>Loading</div>}
-			{error && <div>{error}</div>}
-			<div className="shopItems">
-				{carsArr && carsArr.map(car => (
-					<div className="shopItem" key={car.id}>
-						{car.engineOne}
-					</div>
-				))}
-			</div>
+			<ShopItems cars={currentPosts} loading={loading} error={error} />
+			<ShopPag postsPerPage={postsPerPage} totalPosts={carsArr.length} paginate={paginate}/>
 		</div>
 	 );
 }
