@@ -114,6 +114,18 @@ h2 {
   height: auto;
 }
 
+.itemImage {
+  max-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemImage > img {
+  width: auto;
+  height: 100%;
+}
+
 .itemCardContainer {
 	position: fixed;
 	top: 50%;
@@ -139,6 +151,41 @@ h2 {
 
 .itemOverlay {
   background-color: white;
-  height: 80%;
-  width: 80%;
+  min-width: 50%;
+  max-width: 500px;
+  min-height: 50%;
+  display: grid;
+  padding: 2rem;
+}
+
+.itemDesc {
+  grid-column: 1/3;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.extended {
+  max-height: 100%;
+  overflow: visible;
+}
+
+.descExtender {
+  grid-column: 1/3;
+  height: 1rem;
+}
+
+.itemInfo > * {
+  margin-top: 2rem;
+}
+
+.cartAddition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/3;
+}
+
+.cartAddition > * {
+  margin-top: 0.5rem;
 }
