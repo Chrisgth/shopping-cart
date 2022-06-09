@@ -1,4 +1,30 @@
+import { useState } from "react";
+
 const ItemCard = ({currentCar}) => {
+
+	const [price, setPrice] = useState(0)
+
+	const changeHandler = () => {
+		const onlyNumbers = currentCar.price.replace(/\D/g, '')
+		const multiplier = document.getElementById('multiplier')
+		let totalPrice = onlyNumbers * multiplier.value
+		const commaAddition = (number) => {
+			let splitString = number.toString().split('')
+			let currentIndex = splitString.length - 3
+			let initLength = splitString.length
+			for(let i=0; i<(Math.floor(initLength/3)); i++) {
+				if (currentIndex === 0) {
+					setPrice(splitString.join(''))
+					return
+				}
+				splitString.splice(currentIndex, 0, ',')
+				currentIndex = currentIndex - 3
+			}
+			setPrice(splitString.join(''))
+		}
+		commaAddition(totalPrice)
+	}
+
 	// const descExtender = () => {
 	// 	const description = document.querySelector('.itemDesc')
 	// 	description.classList.toggle('extended')
@@ -28,8 +54,8 @@ const ItemCard = ({currentCar}) => {
 				</div>
 				{/* <button className="descExtender" onClick={() => descExtender()}>^</button> */}
 				<div className="cartAddition">
-					<p>{currentCar.price}</p>
-					<input type="number"/>
+					<p>${price}</p>
+					<input onChange={() => changeHandler()} type="number" id="multiplier" />
 					<button>Add to Cart</button>
 				</div>
 			</div>
