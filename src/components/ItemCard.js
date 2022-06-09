@@ -25,6 +25,35 @@ const ItemCard = ({currentCar}) => {
 		commaAddition(totalPrice)
 	}
 
+	const cartAddition = () => {
+
+		let cart = JSON.parse(window.localStorage.getItem('cart'))
+		console.log(cart)
+
+		if (cart === null) {
+			cart = []
+			console.log(cart)
+		}
+
+		let cartItem = {
+			car: '',
+			quantity: ''
+		}
+
+		const multiplier = document.getElementById('multiplier').value
+		if ( multiplier === 0 || multiplier === "" || multiplier === NaN || multiplier > 100) return
+
+		cartItem.car = currentCar
+		cartItem.quantity = document.getElementById('multiplier').value
+
+		cart.push(cartItem)
+
+		cart = JSON.stringify(cart)
+		window.localStorage.setItem('cart', cart)
+
+		document.querySelector('.itemCardContainer').classList.toggle('active')
+	}
+
 	// const descExtender = () => {
 	// 	const description = document.querySelector('.itemDesc')
 	// 	description.classList.toggle('extended')
@@ -54,9 +83,10 @@ const ItemCard = ({currentCar}) => {
 				</div>
 				{/* <button className="descExtender" onClick={() => descExtender()}>^</button> */}
 				<div className="cartAddition">
-					<p>${price}</p>
-					<input onChange={() => changeHandler()} type="number" id="multiplier" />
-					<button>Add to Cart</button>
+					{price == 0 && <p>{currentCar.price}</p>}
+					{price !=0 && <p>${price}</p>}
+					<input onChange={() => changeHandler()} type="number" id="multiplier" min={"0"} max={"100"}/>
+					<button id="addToCart" onClick={() => cartAddition()}>Add to Cart</button>
 				</div>
 			</div>
 		</div>

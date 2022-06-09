@@ -9,7 +9,6 @@ const ShopItems = ({cars, loading, error}) => {
 		setCurrentCar(car)
 		const itemCardContainer = document.querySelector('.itemCardContainer')
 		itemCardContainer.classList.toggle('active')
-		console.log(currentCar)
 	}
 
 	return ( 
