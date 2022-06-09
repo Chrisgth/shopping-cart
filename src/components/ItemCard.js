@@ -46,10 +46,27 @@ const ItemCard = ({currentCar}) => {
 		cartItem.car = currentCar
 		cartItem.quantity = document.getElementById('multiplier').value
 
-		cart.push(cartItem)
+		for (let i=0; i<=cart.length-1; i++) {
+			if (cart.length===0) {
+				cart.push(cartItem)
+				cart = JSON.stringify(cart)
+				window.localStorage.setItem('cart', cart)
+				return
 
-		cart = JSON.stringify(cart)
-		window.localStorage.setItem('cart', cart)
+			} else if (cart[i].car.carName === cartItem.car.carName) {
+				cart[i].quantity = (Number(cart[i].quantity) + Number(cartItem.quantity)).toString()
+				console.log(cart[i].quantity)
+				cart = JSON.stringify(cart)
+				window.localStorage.setItem('cart', cart)
+				return
+
+			} else if (i===cart.length-1) {
+				cart.push(cartItem)
+				cart = JSON.stringify(cart)
+				window.localStorage.setItem('cart', cart)
+				return
+			}
+		}
 
 		document.querySelector('.itemCardContainer').classList.toggle('active')
 	}
