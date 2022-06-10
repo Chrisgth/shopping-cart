@@ -41,16 +41,18 @@ const ItemCard = ({currentCar}) => {
 		}
 
 		const multiplier = document.getElementById('multiplier').value
-		if ( multiplier === 0 || multiplier === "" || multiplier === NaN || multiplier > 100) return
+		if ( multiplier === "0" || multiplier === "" || multiplier === NaN || multiplier > 100) return
 
 		cartItem.car = currentCar
 		cartItem.quantity = document.getElementById('multiplier').value
 
-		for (let i=0; i<=cart.length-1; i++) {
+		for (let i=0; i<=cart.length; i++) {
 			if (cart.length===0) {
 				cart.push(cartItem)
 				cart = JSON.stringify(cart)
 				window.localStorage.setItem('cart', cart)
+				document.getElementById('multiplier').value = 0
+				document.querySelector('.itemCardContainer').classList.toggle('active')
 				return
 
 			} else if (cart[i].car.carName === cartItem.car.carName) {
@@ -58,17 +60,19 @@ const ItemCard = ({currentCar}) => {
 				console.log(cart[i].quantity)
 				cart = JSON.stringify(cart)
 				window.localStorage.setItem('cart', cart)
+				document.getElementById('multiplier').value = 0
+				document.querySelector('.itemCardContainer').classList.toggle('active')
 				return
 
 			} else if (i===cart.length-1) {
 				cart.push(cartItem)
 				cart = JSON.stringify(cart)
 				window.localStorage.setItem('cart', cart)
+				document.getElementById('multiplier').value = 0
+				document.querySelector('.itemCardContainer').classList.toggle('active')
 				return
 			}
 		}
-
-		document.querySelector('.itemCardContainer').classList.toggle('active')
 	}
 
 	// const descExtender = () => {
