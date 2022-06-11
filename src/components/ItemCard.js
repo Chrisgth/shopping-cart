@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { responsivePrice } from "../functions/priceMultiplier";
+import { responsivePrice } from "../functions/responsivePrice";
 
 const ItemCard = ({currentCar}) => {
 
@@ -14,11 +14,9 @@ const ItemCard = ({currentCar}) => {
 	const cartAddition = () => {
 
 		let cart = JSON.parse(window.localStorage.getItem('cart'))
-		console.log(cart)
 
 		if (cart === null) {
 			cart = []
-			console.log(cart)
 		}
 
 		let cartItem = {
@@ -27,7 +25,7 @@ const ItemCard = ({currentCar}) => {
 		}
 
 		const multiplier = document.getElementById('multiplier').value
-		if ( multiplier === "0" || multiplier === "" || multiplier === NaN || multiplier > 100) return
+		if ( multiplier === "0" || multiplier === "" || multiplier === isNaN || multiplier > 100) return
 
 		cartItem.car = currentCar
 		cartItem.quantity = document.getElementById('multiplier').value

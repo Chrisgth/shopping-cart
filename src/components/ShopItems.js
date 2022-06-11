@@ -21,7 +21,7 @@ const ShopItems = ({cars, loading, error}) => {
 				className="shopItem" 
 				key={car.id}>
 					{car.carName}
-					<img src={car.imgurl}></img>
+					<img src={car.imgurl} alt="car"></img>
 					{car.price}
 				</div>
 			))}
