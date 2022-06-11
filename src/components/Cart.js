@@ -5,15 +5,27 @@ const Cart = () => {
 	return ( 
 		<div className="cart">
 			{!cart && <div>empty</div>}
-			{cart && <div>
-				{cart.map((item) => (
-					<div>
-						<p>{item.car.carName}</p>
-						<p>Quantity: {item.quantity}</p>
-						<img src={item.car.imgurl} alt="" />
-					</div>
-				))}
-				</div>}
+			<table className="cartTable">
+				<tr>
+					<th></th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th></th>
+				</tr>
+				{cart &&
+					cart.map((item) => (
+						<tr>
+							<td><img src={item.car.imgurl}></img></td>
+							<td>{item.car.carName}</td>
+							<td>{item.car.price}</td>
+							<td><input type="number" value={item.quantity}/></td>
+							<td><button>Remove</button></td>
+						</tr>
+					))}
+					
+			</table>
+				<button onClick={() => window.localStorage.clear()}>Clear cart</button>
 		</div>
 	 );
 }

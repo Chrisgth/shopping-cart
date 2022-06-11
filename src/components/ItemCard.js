@@ -1,28 +1,14 @@
 import { useState } from "react";
+import { responsivePrice } from "../functions/priceMultiplier";
 
 const ItemCard = ({currentCar}) => {
 
 	const [price, setPrice] = useState(0)
 
+	const multiplier = document.getElementById('multiplier')
+
 	const changeHandler = () => {
-		const onlyNumbers = currentCar.price.replace(/\D/g, '')
-		const multiplier = document.getElementById('multiplier')
-		let totalPrice = onlyNumbers * multiplier.value
-		const commaAddition = (number) => {
-			let splitString = number.toString().split('')
-			let currentIndex = splitString.length - 3
-			let initLength = splitString.length
-			for(let i=0; i<(Math.floor(initLength/3)); i++) {
-				if (currentIndex === 0) {
-					setPrice(splitString.join(''))
-					return
-				}
-				splitString.splice(currentIndex, 0, ',')
-				currentIndex = currentIndex - 3
-			}
-			setPrice(splitString.join(''))
-		}
-		commaAddition(totalPrice)
+		setPrice(responsivePrice(currentCar, multiplier.value))
 	}
 
 	const cartAddition = () => {

@@ -190,3 +190,28 @@ h2 {
   margin-top: 0.5rem;
 }
 
+tr {
+  max-height: 200px;
+}
+
+td > img {
+  max-height: 100px;
+}
+
+td {
+  text-align: center;
+}
+
+tr, td, th {
+  border: 1px solid black;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cartTable {
+  width: 50%;
+}
