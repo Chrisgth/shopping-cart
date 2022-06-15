@@ -65,8 +65,8 @@ const ItemCard = ({currentCar}) => {
 	// }
 	return ( 
 		<div className="itemCardContainer">
-			<button onClick={() => document.querySelector('.itemCardContainer').classList.toggle('active')}>X</button>
 			<div className="itemOverlay">
+			<button onClick={() => document.querySelector('.itemCardContainer').classList.toggle('active')}>X</button>
 				<div className="itemInfo">
 					<h3>{currentCar.carName}</h3>
 					<div>

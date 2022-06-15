@@ -19,7 +19,7 @@ const Cart = () => {
 	const clearCart = () => {
 		if (window.confirm('Are you sure you want to clear your cart?')) {
 			window.localStorage.clear()
-			setCart([])
+			setCart(null)
 		} else {
 			return
 		}
@@ -50,7 +50,8 @@ const Cart = () => {
 		totalPrice = commaAddition(totalPrice)
 	}
 
-	subTotal()
+	console.log(cart)
+	if (cart !== null) subTotal()
 
 	useEffect(() => {
 		window.localStorage.setItem('cart', JSON.stringify(cart))
@@ -58,8 +59,8 @@ const Cart = () => {
 
 	return ( 
 		<div className="cart">
-			{!cart && <div>empty</div>}
-			<table className="cartTable">
+			{!cart && <div>Looks like your cart is empty.</div>}
+			{cart && <table className="cartTable">
 				<thead>
 					<tr>
 						<th></th>
@@ -86,7 +87,7 @@ const Cart = () => {
 							<td><button onClick={() => deleteItem(index)}>Remove</button></td>
 						</tr>
 					))}</tbody>}
-			</table>
+			</table>}
 				<div>
 					<p>Subtotal: ${totalPrice}</p>
 				</div>
