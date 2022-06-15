@@ -8,7 +8,16 @@ const Cart = () => {
 	const deleteItem = (index) => {
 		const newCart = [...cart]
 		newCart.splice(index, 1)
-		setCart(newCart)
+
+		if (newCart.length === 0) {
+			setCart(null)
+			console.log(cart)
+			console.log(newCart) 
+		} else { 
+			setCart(newCart)
+			console.log(cart)
+			console.log(newCart) 
+		}
 	}
 
 	const changeQuantity = (value, index) => {
