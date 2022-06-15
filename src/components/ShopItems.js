@@ -20,9 +20,9 @@ const ShopItems = ({cars, loading, error}) => {
 				onClick={() => clickHandler(car)} 
 				className="shopItem" 
 				key={car.id}>
-					{car.carName}
+					<p className="listCarName">{car.carName}</p>
 					<img src={car.imgurl} alt="car"></img>
-					{car.price}
+					<p>{car.price}</p>
 				</div>
 			))}
 			<ItemCard currentCar={currentCar}/>

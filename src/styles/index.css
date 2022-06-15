@@ -27,6 +27,7 @@ code {
   color: #ACBDBA;
 }
 
+
 .links {
   margin-left: auto;
   margin-top: auto;
@@ -98,15 +99,19 @@ h2 {
 
 .shopItems {
   display: grid;
-  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
   gap: 2rem;
   padding: 2rem;
 }
 
 .shopItem {
-  border: 1px solid black;
+  cursor: pointer;
   min-width: 150px;
   min-height: 150px;
+  text-align: center;
+  border: 0.5rem solid #2E2F2F;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 .shopItem > img {
@@ -214,4 +219,37 @@ tr, td, th {
 
 .cartTable {
   width: 50%;
+}
+
+.pages {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.pages > button {
+  cursor: pointer;
+  border-radius: 3rem;
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  margin-left: 1rem;
+  background-color:#2E2F2F;
+  color: #ACBDBA;
+  font-size: 1.5rem;
+}
+
+.pages > button:hover {
+  background-color:#ACBDBA;
+  color: #2E2F2F;
+}
+
+.content {
+  width: 80%;
+  max-width: 2000px;
+  margin:auto;
+}
+
+.listCarName {
+  text-decoration: underline;
+  font-weight: bolder;
 }
