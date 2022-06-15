@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { responsivePrice } from "../functions/responsivePrice";
+import { Link } from "react-router-dom";
 const Cart = () => {
 
 	const [cart, setCart] = useState(JSON.parse(window.localStorage.getItem('cart')))
@@ -50,7 +51,6 @@ const Cart = () => {
 		totalPrice = commaAddition(totalPrice)
 	}
 
-	console.log(cart)
 	if (cart !== null) subTotal()
 
 	useEffect(() => {
@@ -59,7 +59,12 @@ const Cart = () => {
 
 	return ( 
 		<div className="cart">
-			{!cart && <div>Looks like your cart is empty.</div>}
+			{!cart && <div className="emptyCart">
+				<p>Looks like your cart is empty.</p>
+				<div>
+					<Link id="cartLink" to="/shop">Shop Now</Link>
+				</div>
+				</div>}
 			{cart && <table className="cartTable">
 				<thead>
 					<tr>
@@ -88,10 +93,12 @@ const Cart = () => {
 						</tr>
 					))}</tbody>}
 			</table>}
-				<div>
-					<p>Subtotal: ${totalPrice}</p>
-				</div>
-				<button onClick={() => clearCart()}>Clear cart</button>
+				{cart && <div className="checkOut">
+					<div className="subTotal">
+						<p>Subtotal: ${totalPrice}</p>
+					</div>
+					<button id="clearCart" onClick={() => clearCart()}>Clear cart</button>
+				</div>}
 		</div>
 	 );
 }

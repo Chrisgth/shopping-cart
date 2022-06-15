@@ -73,7 +73,8 @@ code {
   height: auto;
 }
 
-.intro > a {
+.intro > a,
+#cartLink{
   text-decoration: none;
   background-color: #2E2F2F;;
   color: #ACBDBA;
@@ -86,7 +87,8 @@ code {
   font-weight: bolder;
 }
 
-.intro > a:hover {
+.intro > a:hover,
+#cartLink:hover {
   color: white;
 }
 
@@ -238,12 +240,14 @@ tbody {
 
 table {
   border-collapse: collapse;
+  margin-top: 2rem;
 }
 
-.cart {
+.cart, .checkOut {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
 }
 
 .cartTable {
@@ -313,4 +317,25 @@ table {
 #addToCart:hover {
   color: white;
 
+}
+
+.emptyCart {
+  min-height: 200px;
+}
+
+.emptyCart > div {
+  margin-top: 4rem;
+}
+
+.emptyCart > p {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.checkOut {
+  margin-bottom: 2rem;
+}
+
+button {
+  cursor: pointer;
 }
