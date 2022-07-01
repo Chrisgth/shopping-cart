@@ -5,16 +5,18 @@ const Navbar = () => {
 	return ( 
 		<div className="navbar">
 			<h1>AutoTraderCart</h1>
-			<div className="links">
-				<Link to='/shopping-cart'>Home</Link>
-				<Link to='/shop'>Shop</Link>
+			<div className="linkwrap">
+				<div className="links">
+					<Link to='/shopping-cart'>Home</Link>
+					<Link to='/shop'>Shop</Link>
+				</div>
+				<Link to='/cart'><img
+					id="cartico"
+					src={shoppingCart}
+					alt="shoppingcart"
+					/>
+					</Link>
 			</div>
-			<Link to='/cart'><img
-				id="cartico"
-				src={shoppingCart}
-				alt="shoppingcart"
-				/>
-				</Link>
 		</div>
 	 );
 }

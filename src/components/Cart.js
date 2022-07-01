@@ -11,12 +11,8 @@ const Cart = () => {
 
 		if (newCart.length === 0) {
 			setCart(null)
-			console.log(cart)
-			console.log(newCart) 
 		} else { 
 			setCart(newCart)
-			console.log(cart)
-			console.log(newCart) 
 		}
 	}
 

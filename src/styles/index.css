@@ -27,7 +27,6 @@ code {
   color: #ACBDBA;
 }
 
-
 .links {
   margin-left: auto;
   margin-top: auto;
@@ -338,4 +337,50 @@ table {
 
 button {
   cursor: pointer;
+}
+
+.linkwrap {
+  display: flex;
+  margin-left: auto;
+}
+
+@media (max-width: 600px) {
+  .shopItems {
+    grid-template-columns: repeat(1, minmax(150px, 1fr));
+  }
+  .navbar {
+    display: grid;
+    grid-template: 1fr 1fr/ 1fr 1fr;
+  }
+  .navbar > h1 {
+    grid-column: 1/end;
+    text-align: center;
+  }
+  .linkwrap {
+    grid-column: 1/end;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.25rem;
+  }
+  .links {
+    margin-left: 0;
+  }
+
+  .content, .intro {
+    margin: 0;
+    width: 100%;
+  }
+
+  .intro > h2 {
+    margin: 0;
+  }
+
+  .intro > a {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  td > img {
+    max-height: 32px;
+  }
 }
