@@ -13,3 +13,5 @@ A shopping cart application built using React.
 - The app will then store all relevant cart information inside of browser local storage.
 
 - Users can view their cart page where all of their selected items will be displayed and a grand total is shown.
+
+- These items can then be either removed from the cart or have their quantity modified.
