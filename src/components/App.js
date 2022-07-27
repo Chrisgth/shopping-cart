@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Cart from './Cart';
 import Home from './Home';
 import Navbar from './Navbar';
@@ -11,9 +11,9 @@ function App() {
         <Navbar />
         <div className="content">
           <Routes>
-            <Route path="/shopping-cart" element={<Home/>}/>
-            <Route path="/shop" element={<Shop/>}/>
-            <Route path="/cart" element={<Cart/>}/>
+            <Route path="/shopping-cart" element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </div>
       </div>
