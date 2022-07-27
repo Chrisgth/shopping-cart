@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.a65f79ce.css",
-    "main.js": "/shopping-cart/static/js/main.43528767.js",
+    "main.css": "/shopping-cart/static/css/main.dc36df7f.css",
+    "main.js": "/shopping-cart/static/js/main.7504d8cc.js",
     "static/media/mazdacx3.jpg": "/shopping-cart/static/media/mazdacx3.6c6c29c3ebcf835dd390.jpg",
     "index.html": "/shopping-cart/index.html",
-    "main.a65f79ce.css.map": "/shopping-cart/static/css/main.a65f79ce.css.map",
-    "main.43528767.js.map": "/shopping-cart/static/js/main.43528767.js.map"
+    "main.dc36df7f.css.map": "/shopping-cart/static/css/main.dc36df7f.css.map",
+    "main.7504d8cc.js.map": "/shopping-cart/static/js/main.7504d8cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.a65f79ce.css",
-    "static/js/main.43528767.js"
+    "static/css/main.dc36df7f.css",
+    "static/js/main.7504d8cc.js"
   ]
 }
